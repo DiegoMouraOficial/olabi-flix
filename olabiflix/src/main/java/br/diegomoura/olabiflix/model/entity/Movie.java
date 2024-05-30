@@ -35,20 +35,20 @@ public class Movie {
     //region ...Constructor
     public Movie(){};
 
-    public Movie(String awards, String country, String language, String plot, String actors, String writer, String director, String genre, String runtime, String released, String rated, String releaseYear, String title) {
-        this.awards = awards;
-        this.country = country;
-        this.language = language;
-        this.plot = plot;
-        this.actors = actors;
-        this.writer = writer;
-        this.director = director;
-        this.genre = genre;
-        this.runtime = runtime;
-        this.released = released;
-        this.rated = rated;
-        this.releaseYear = releaseYear;
+    public Movie(String title, String releaseYear, String rated, String released, String runtime, String genre, String director, String writer, String actors, String plot, String language, String country, String awards) {
         this.title = title;
+        this.releaseYear = releaseYear;
+        this.rated = rated;
+        this.released = released;
+        this.runtime = runtime;
+        this.genre = genre;
+        this.director = director;
+        this.writer = writer;
+        this.actors = actors;
+        this.plot = plot;
+        this.language = language;
+        this.country = country;
+        this.awards = awards;
     }
     //endregion
 
