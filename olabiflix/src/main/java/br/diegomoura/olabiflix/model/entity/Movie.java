@@ -167,7 +167,6 @@ public class Movie {
     // endregion
 
     //region ...toString
-
     @Override
     public String toString() {
         return "Movie{" +
