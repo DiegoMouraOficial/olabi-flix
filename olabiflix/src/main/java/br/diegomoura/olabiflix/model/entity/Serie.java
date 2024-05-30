@@ -23,21 +23,23 @@ public class Serie {
     private String poster;
     private List<String> actors;
 
+    @SuppressWarnings("unused")
     @Embedded
     private Ratings ratings;
 
     //region ...Constructor
     public Serie(){}
 
-    public Serie(List<String> actors, String poster, List<String> writers, List<String> genre, String totalSeasons, String title) {
+    public Serie(String title, List<String> actors, String poster, List<String> writers, List<String> genre, String totalSeasons, Ratings ratings) {
+        this.title = title;
         this.actors = actors;
         this.poster = poster;
         this.writers = writers;
         this.genre = genre;
         this.totalSeasons = totalSeasons;
-        this.title = title;
+        this.ratings = ratings;
     }
-    //endregion
+//endregion
 
     //region ...Getter and Setter
     public UUID getId() {
