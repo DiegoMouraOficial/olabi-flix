@@ -1,7 +1,9 @@
 package br.diegomoura.olabiflix;
 
 import br.diegomoura.olabiflix.model.entity.Movie;
+import br.diegomoura.olabiflix.model.entity.Serie;
 import br.diegomoura.olabiflix.repository.MovieRepository;
+import br.diegomoura.olabiflix.repository.SerieRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,10 +15,12 @@ import java.util.List;
 @RestController
 public class OlabiflixApplication {
 
-	private final MovieRepository repository;
+	private final MovieRepository movieRepository;
+	private final SerieRepository serieRepository;
 
-    public OlabiflixApplication(MovieRepository repository) {
-        this.repository = repository;
+    public OlabiflixApplication(MovieRepository movieRepository, SerieRepository serieRepository) {
+        this.movieRepository = movieRepository;
+		this.serieRepository = serieRepository;
     }
 
     public static void main(String[] args) {
@@ -30,6 +34,11 @@ public class OlabiflixApplication {
 
 	@GetMapping("/movies")
 	public List<Movie> getMovies(){
-		return repository.findAll();
+		return movieRepository.findAll();
+	}
+
+	@GetMapping("/series")
+	public List<Serie> getSeries(){
+		return serieRepository.findAll();
 	}
 }
