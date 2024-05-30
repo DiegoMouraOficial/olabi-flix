@@ -1,5 +1,6 @@
 package br.diegomoura.olabiflix.model.entity;
 
+import br.diegomoura.olabiflix.model.value.Ratings;
 import jakarta.persistence.*;
 import org.hibernate.annotations.UuidGenerator;
 
@@ -21,6 +22,9 @@ public class Serie {
     private List<String> writers;
     private String poster;
     private List<String> actors;
+
+    @Embedded
+    private Ratings ratings;
 
     //region ...Constructor
     public Serie(){}
@@ -106,5 +110,5 @@ public class Serie {
                 ", actors=" + actors +
                 '}';
     }
-    //endregion=
+    //endregion
 }
