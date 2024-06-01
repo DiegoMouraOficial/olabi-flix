@@ -15,7 +15,6 @@ public class Ratings {
         this.rating = rating;
         this.likes = likes;
     }
-
     //endregion
 
     //region ...Getter and Setter

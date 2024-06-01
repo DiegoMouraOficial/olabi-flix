@@ -11,7 +11,6 @@ public class Movie {
 
     @Id
     @UuidGenerator
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
 
     private String title;

@@ -13,7 +13,6 @@ public class Serie {
 
     @Id
     @UuidGenerator
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
 
     private String title;
@@ -23,14 +22,13 @@ public class Serie {
     private String poster;
     private List<String> actors;
 
-    @SuppressWarnings("unused")
     @Embedded
     private Ratings ratings;
 
     //region ...Constructor
     public Serie(){}
 
-    public Serie(String title, List<String> actors, String poster, List<String> writers, List<String> genre, String totalSeasons, Ratings ratings) {
+    public Serie(String title, String totalSeasons,  List<String> genre, List<String> writers, String poster, List<String> actors, Ratings ratings) {
         this.title = title;
         this.actors = actors;
         this.poster = poster;
@@ -97,9 +95,18 @@ public class Serie {
     public void setTitle(String title) {
         this.title = title;
     }
-    //endregion
+
+    public Ratings getRatings() {
+        return ratings;
+    }
+
+    public void setRatings(Ratings ratings) {
+        this.ratings = ratings;
+    }
+//endregion
 
     //region ...toString
+
     @Override
     public String toString() {
         return "Serie{" +
@@ -110,6 +117,7 @@ public class Serie {
                 ", writers=" + writers +
                 ", poster='" + poster + '\'' +
                 ", actors=" + actors +
+                ", ratings=" + ratings +
                 '}';
     }
     //endregion
